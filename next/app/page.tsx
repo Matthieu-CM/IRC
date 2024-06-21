@@ -24,7 +24,7 @@ export default function Home() {
     }, [])
     
     if (username === '') {
-        const u = prompt('What is your username ?')
+        const u = window.prompt('What is your username ?')
         if (u !== null) setUsername(u)
         return
     }
