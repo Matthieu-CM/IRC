@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { socket } from './socket';
+const prompt=require("prompt-sync")({sigint:true}); 
 
 export default function Home() {
     const [username, setUsername] = useState('')
