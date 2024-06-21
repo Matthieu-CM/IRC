@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import logged from '../vars/connected'
-import { Navigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation'
 
 export default function Log() {
     const [input, setInput] = useState('')
+    const router = useRouter()
 
     function submit(arg) {
         arg.preventDefault()
@@ -15,7 +16,7 @@ export default function Log() {
         window.localStorage.setItem('user', input)
         setInput('')
     }
-    if (logged.state === true) return <Navigate to="/" replace />
+    if (logged.state === true) router.push('/')
 
     return (<div id='LOG'>
         <h1>Login</h1>

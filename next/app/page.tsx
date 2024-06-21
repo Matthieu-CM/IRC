@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { socket } from './socket';
 import logged from './vars/connected'
-import { Navigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
     const [username, setUsername] = useState('')
@@ -26,9 +26,11 @@ export default function Home() {
             if (sel!=null && data.channel === sel.innerHTML) setMessages(data.messages)
             })
     }, [])
+
+    const router = useRouter()
     
     if (logged.state === false) {
-        return <Navigate to="/log" />
+        router.push('/log')
     }
     
     function submit(arg: any, msg = input, channel = actualChannel) {
