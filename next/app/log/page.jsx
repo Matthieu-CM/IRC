@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react';
 import logged from '../../vars/connected'
 import { Navigate } from 'react-router-dom';
