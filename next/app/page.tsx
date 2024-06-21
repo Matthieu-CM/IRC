@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { socket } from './socket';
-import logged from '../vars/connected'
+import logged from './vars/connected'
 import { Navigate } from 'react-router-dom';
 
 export default function Home() {

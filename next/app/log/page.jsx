@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import logged from '../../vars/connected'
+import logged from '../vars/connected'
 import { Navigate } from 'react-router-dom';
 
 export default function Log() {
