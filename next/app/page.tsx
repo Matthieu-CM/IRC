@@ -13,6 +13,10 @@ export default function Home() {
 
 
     useEffect(() => {
+        if (username === '') {
+            const u = window.prompt('What is your username ?')
+            if (u !== null) setUsername(u)
+        }
         socket.emit('channelAsk', username)
         socket.on('Channels', data => { setChannels(data) })
         socket.on('userNameChange', data => { setUsername(data) })
@@ -24,11 +28,6 @@ export default function Home() {
             })
     }, [])
     
-    if (username === '') {
-        const u = window.prompt('What is your username ?')
-        if (u !== null) setUsername(u)
-        return
-    }
     
     function submit(arg: any, msg = input, channel = actualChannel) {
         if (arg === null) { } else { arg.preventDefault() }
